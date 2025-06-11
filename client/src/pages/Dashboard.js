@@ -1,11 +1,11 @@
-import { UseState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CategoryMenu from "../components/CategoryMenu";
 import QuestionList from "../components/QuestionList";
-import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const username = localStorage.getItem("username");
-  const [selectedCategory, setSelectedCategory] = UseState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const navigate = useNavigate();
 
   const handleLogout = () => {

@@ -9,9 +9,9 @@ export default function Register() {
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
-    e.preventDafault();
+    e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/users/register", {
+      await axios.post("https://petland-backend.onrender.com", {
         username,
         password,
       });

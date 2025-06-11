@@ -12,7 +12,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/login",
+        "https://petland-backend.onrender.com",
         { username, password }
       );
       localStorage.setItem("token", response.data.token);
