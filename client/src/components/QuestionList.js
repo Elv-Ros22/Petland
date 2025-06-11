@@ -9,7 +9,7 @@ export default function QuestionList({ category }) {
 
   const fetchQuestions = async () => {
     const response = await axios.get(
-      `http://localhost:5000/api/questions/${category}`
+      `https://petland-backend.onrender.com/api/questions/${category}`
     );
     setQuestions(response.data);
   };
@@ -21,7 +21,7 @@ export default function QuestionList({ category }) {
   const addQuestion = async (e) => {
     e.preventDefault();
     if (!text.trim()) return;
-    await axios.post("http://localhost:5000/api/questions", {
+    await axios.post("https://petland-backend.onrender.com", {
       category,
       text,
       createdBy: username,
@@ -38,6 +38,7 @@ export default function QuestionList({ category }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Ask something..."
+          style={{ width: "300px" }}
         />
         <button>Post</button>
       </form>
